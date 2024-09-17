@@ -29,7 +29,7 @@ type MiniprogramOrderList struct {
 
 func initMysql() *gorm.DB {
 	var err error
-	dsn := "root:root@tcp(123.57.167.109:3306)/leguan?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:root@tcp(127.0.0.1:3306)/leguan?charset=utf8mb4&parseTime=True&loc=Local"
 	client, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		fmt.Println("failed to connect database" + err.Error())
