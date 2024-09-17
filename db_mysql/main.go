@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	jsoniter "github.com/json-iterator/go"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -46,10 +47,12 @@ func Select(db *gorm.DB, uid string) []MiniprogramOrder {
 	return orderList
 }
 func main() {
+	var json = jsoniter.ConfigCompatibleWithStandardLibrary
 	db := initMysql()
 	if db == nil {
 		return
 	}
 	orderList := Select(db, "liupeng20240908")
-	fmt.Println(orderList)
+	str, _ := json.Marshal(orderList)
+	fmt.Println(str)
 }
