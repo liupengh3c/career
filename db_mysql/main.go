@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type MiniprogramOrderList struct {
+type MiniprogramOrder struct {
 	gorm.Model                 //gorm预定义结构体
 	Uid                string  `json:"uid"`
 	OrderSn            string  `json:"order_sn"`
