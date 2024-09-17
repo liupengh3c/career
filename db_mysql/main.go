@@ -53,6 +53,6 @@ func main() {
 		return
 	}
 	orderList := Select(db, "liupeng20240908")
-	str, _ := json.Marshal(orderList)
+	str, _ := json.MarshalToString(orderList)
 	fmt.Println(str)
 }
