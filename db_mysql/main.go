@@ -40,8 +40,8 @@ func initMysql() *gorm.DB {
 }
 
 // 根据uid查询订单
-func Select(db *gorm.DB, uid string) []MiniprogramOrderList {
-	orderList := []MiniprogramOrderList{}
+func Select(db *gorm.DB, uid string) []MiniprogramOrder {
+	orderList := []MiniprogramOrder{}
 	db.Where("uid = ?", uid).Find(&orderList)
 	return orderList
 }
