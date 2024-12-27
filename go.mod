@@ -6,7 +6,7 @@ require (
 	github.com/elastic/go-elasticsearch/v7 v7.17.10
 	github.com/elastic/go-elasticsearch/v8 v8.17.0
 	github.com/json-iterator/go v1.1.12
-	github.com/liupengh3c/esbuilder v0.0.0-20241127083003-d29b99ee8e8d
+	github.com/liupengh3c/esbuilder v0.0.0-20241227073137-4141681b4dfb
 	github.com/olivere/elastic/v7 v7.0.32
 	github.com/panjf2000/ants/v2 v2.9.1
 	golang.org/x/net v0.24.0

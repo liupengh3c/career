@@ -1,11 +1,13 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"os"
 	"strings"
 	"time"
 
+	"github.com/elastic/go-elasticsearch/v7/esapi"
 	"github.com/elastic/go-elasticsearch/v8"
 	jsoniter "github.com/json-iterator/go"
 	"github.com/liupengh3c/esbuilder"
@@ -13,7 +15,6 @@ import (
 
 // 最外层数据结构
 type Documents struct {
-	ScrollID string      `json:"_scroll_id"`
 	Shards   Shards      `json:"_shards"`
 	Hits     HitOutLayer `json:"hits"`
 	TimedOut bool        `json:"timed_out"`
@@ -36,6 +37,7 @@ type Hits struct {
 	Score  float64        `json:"_score"`
 	Source map[string]any `json:"_source"`
 	Type   string         `json:"_type"`
+	Sort   []any          `json:"sort"`
 }
 type Total struct {
 	Relation string `json:"relation"`
@@ -43,17 +45,16 @@ type Total struct {
 }
 
 func main() {
-	client, err := NewEsClient()
-	if err != nil {
-		fmt.Println("create client err:", err.Error())
-		return
-	}
-	fmt.Println("connect success")
-	for i := 0; i < 510; i++ {
-		ScrollSearch(client)
-	}
+	SearchFromSize()
 }
-func NewEsClient() (*elasticsearch.Client, error) {
+
+func SearchFromSize() {
+	st := time.Now()
+	defer func() {
+		fmt.Println("cost:", time.Since(st).Milliseconds(), "ms")
+	}()
+	var json = jsoniter.ConfigCompatibleWithStandardLibrary
+	docs := Documents{}
 	cert, _ := os.ReadFile("/Users/liupeng/Documents/study/elasticsearch-8.17.0/config/certs/http_ca.crt")
 	client, err := elasticsearch.NewClient(elasticsearch.Config{
 		Username:  "elastic",
@@ -63,67 +64,56 @@ func NewEsClient() (*elasticsearch.Client, error) {
 	})
 
 	if err != nil {
-		// fmt.Println("create client err:", err.Error())
-		return client, err
+		fmt.Println("create client err:", err.Error())
+		return
 	}
-	return client, nil
-}
 
-func ScrollSearch(client *elasticsearch.Client) {
-	var json = jsoniter.ConfigCompatibleWithStandardLibrary
-	docs := Documents{}
 	dslQuery := esbuilder.NewDsl()
 	boolQuery := esbuilder.NewBoolQuery()
-
-	dslQuery.SetOrder(esbuilder.NewSortQuery("doc_id", "asc"))
+	boolQuery.Filter(esbuilder.NewRangeQuery("doc_id").Gte(1))
 	dslQuery.SetQuery(boolQuery)
-	dslQuery.SetSize(10000)
-
-	res, err := client.Search(
-		client.Search.WithIndex("new_tag_202411"),
-		client.Search.WithBody(strings.NewReader(dslQuery.BuildJson())),
-		client.Search.WithScroll(time.Minute*20),
-	)
+	dslQuery.SetFrom(0)
+	dslQuery.SetSize(10)
+	dslQuery.SetOrder(esbuilder.NewSortQuery("doc_id", "asc"))
+	dsl := dslQuery.BuildJson()
+	search := esapi.SearchRequest{
+		Index: []string{"new_tag_202411"},
+		Body:  strings.NewReader(dsl),
+	}
+	resp, err := search.Do(context.Background(), client)
 	if err != nil {
 		fmt.Println("search err:", err.Error())
 		return
 	}
-	err = json.NewDecoder(res.Body).Decode(&docs)
+	err = json.NewDecoder(resp.Body).Decode(&docs)
 	if err != nil {
 		fmt.Println("decode err:", err.Error())
 		return
 	}
-	fmt.Println("search count:", len(docs.Hits.Hits))
-	scrollId := docs.ScrollID
+	fmt.Println(docs.Hits.Hits[len(docs.Hits.Hits)-1].Sort)
+	dslQuery.SetSearchAfter(docs.Hits.Hits[len(docs.Hits.Hits)-1].Sort)
 	for {
-		docs = Documents{}
-		res, err = client.Scroll(
-			client.Scroll.WithScrollID(scrollId),
-			client.Scroll.WithScroll(time.Minute),
-		)
+		search := esapi.SearchRequest{
+			Index: []string{"new_tag_202411"},
+			Body:  strings.NewReader(dslQuery.BuildJson()),
+		}
+		fmt.Println(dslQuery.BuildJson())
+		resp, err = search.Do(context.Background(), client)
 		if err != nil {
-			fmt.Println("scroll err:", err.Error())
+			fmt.Println("search err:", err.Error())
 			return
 		}
-
-		err = json.NewDecoder(res.Body).Decode(&docs)
+		err = json.NewDecoder(resp.Body).Decode(&docs)
 		if err != nil {
 			fmt.Println("decode err:", err.Error())
 			return
 		}
-		defer res.Body.Close()
-		if res.StatusCode == 429 {
-			fmt.Println("scroll contexts is more than 500")
-			return
-		}
 		if len(docs.Hits.Hits) == 0 {
+			fmt.Println("no more data")
 			break
 		}
-		fmt.Println("search count:", len(docs.Hits.Hits))
-		scrollId = docs.ScrollID
-	}
 
-	client.ClearScroll(
-		client.ClearScroll.WithScrollID(scrollId),
-	)
+		fmt.Println(len(docs.Hits.Hits), docs.Hits.Hits[len(docs.Hits.Hits)-1].Source["doc_id"])
+		dslQuery.SetSearchAfter(docs.Hits.Hits[len(docs.Hits.Hits)-1].Sort)
+	}
 }
