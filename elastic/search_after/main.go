@@ -58,7 +58,7 @@ func SearchFromSize() {
 	cert, _ := os.ReadFile("/Users/liupeng/Documents/study/elasticsearch-8.17.0/config/certs/http_ca.crt")
 	client, err := elasticsearch.NewClient(elasticsearch.Config{
 		Username:  "elastic",
-		Password:  "XBS=adqa799j_Aoz=A+h",
+		Password:  "xpE4DQGWE9bCkoj7WXYE",
 		Addresses: []string{"https://127.0.0.1:9200"},
 		CACert:    cert,
 	})
@@ -73,7 +73,7 @@ func SearchFromSize() {
 	boolQuery.Filter(esbuilder.NewRangeQuery("doc_id").Gte(1))
 	dslQuery.SetQuery(boolQuery)
 	dslQuery.SetFrom(0)
-	dslQuery.SetSize(10)
+	dslQuery.SetSize(1000)
 	dslQuery.SetOrder(esbuilder.NewSortQuery("doc_id", "asc"))
 	dsl := dslQuery.BuildJson()
 	search := esapi.SearchRequest{
@@ -93,11 +93,11 @@ func SearchFromSize() {
 	fmt.Println(docs.Hits.Hits[len(docs.Hits.Hits)-1].Sort)
 	dslQuery.SetSearchAfter(docs.Hits.Hits[len(docs.Hits.Hits)-1].Sort)
 	for {
+		fmt.Println(dslQuery.BuildJson())
 		search := esapi.SearchRequest{
 			Index: []string{"new_tag_202411"},
 			Body:  strings.NewReader(dslQuery.BuildJson()),
 		}
-		fmt.Println(dslQuery.BuildJson())
 		resp, err = search.Do(context.Background(), client)
 		if err != nil {
 			fmt.Println("search err:", err.Error())
@@ -113,7 +113,7 @@ func SearchFromSize() {
 			break
 		}
 
-		fmt.Println(len(docs.Hits.Hits), docs.Hits.Hits[len(docs.Hits.Hits)-1].Source["doc_id"])
+		fmt.Println("检索数据数量:", len(docs.Hits.Hits), "doc_id:", docs.Hits.Hits[len(docs.Hits.Hits)-1].Source["doc_id"])
 		dslQuery.SetSearchAfter(docs.Hits.Hits[len(docs.Hits.Hits)-1].Sort)
 	}
 }
