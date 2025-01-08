@@ -11,7 +11,7 @@ host = 'https://localhost:9200'
 username = 'elastic'
 password = 'xpE4DQGWE9bCkoj7WXYE'
  
-# 创建Elasticsearch客户端实例，并提供用户名和密码
+# 创建Elasticsearch客户端实例
 es = Elasticsearch(hosts=[host], http_auth=(username, password), verify_certs=False,ca_certs="/Users/liupeng/Documents/study/elasticsearch-8.17.0/config/certs/http_ca.crt")
 # 检查连接是否成功
 if not es.ping():
@@ -19,7 +19,6 @@ if not es.ping():
     exit()
 else:
     print("成功连接到Elasticsearch")
-# 现在你可以使用es变量来与Elasticsearch进行交互了
 
 # 加载预训练的CLIP模型和处理器
 model = CLIPModel.from_pretrained("/Users/liupeng/Documents/career/clip-vit-large-patch14")
@@ -28,7 +27,6 @@ processor = CLIPProcessor.from_pretrained("/Users/liupeng/Documents/career/clip-
 # 加载图像并进行预处理
 # folder = "/Users/liupeng/Documents/career/cats_and_dogs_v2/train/cats"
 folder = "/Users/liupeng/Documents/career/cats_and_dogs_v2/train/dogs"
-
 
 for root, dirs, files in os.walk(folder):
     index_id = 1000
