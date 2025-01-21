@@ -1,0 +1,19 @@
+name:"clip-vit-large-patch14"
+backend:"python"
+input [
+	{
+		name:"INPUT0"
+		data_type: TYPE_FP32
+		dims: [3,-1,-1]
+	}
+]
+
+output[
+	{
+		name:"OUTPUT0"
+		data_type: TYPE_FP32
+		dims: [ 768 ]
+	}
+]
+instance_group[{ kind: KIND_CPU }]
+
