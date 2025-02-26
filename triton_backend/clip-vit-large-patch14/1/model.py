@@ -105,7 +105,7 @@ class TritonPythonModel:
             # Get INPUT0
             in_0 = pb_utils.get_input_tensor_by_name(request, "INPUT0")
  
-            inputs = self.processor(images=in_0, return_tensors="pt")
+            inputs = self.processor(images=in_0.as_numpy(), return_tensors="pt")
             # 提取图像特征
             with torch.no_grad():
                 image_features = self.model.get_image_features(**inputs)
@@ -125,8 +125,9 @@ class TritonPythonModel:
             #
             # pb_utils.InferenceResponse(
             #    output_tensors=..., TritonError("An error occurred"))
+            out_tensor_0 = pb_utils.Tensor("OUTPUT0", numpy_array.astype(output0_dtype))
             inference_response = pb_utils.InferenceResponse(
-                output_tensors=[numpy_array[0]]
+                output_tensors=[out_tensor_0]
             )
             responses.append(inference_response)
  

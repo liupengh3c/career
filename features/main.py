@@ -33,7 +33,7 @@ for root, dirs, files in os.walk(folder):
     for file in files:
         index_id += 1
         print(os.path.join(root, file))
-        image = Image.open(os.path.join(root, file))  
+        image = Image.open(os.path.join(root, file))
         inputs = processor(images=image, return_tensors="pt")
         # 提取图像特征
         with torch.no_grad():
