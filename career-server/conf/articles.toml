@@ -1,0 +1,318 @@
+[[banner_list]]
+img = "../../images/banner/begin.jpg"
+text = "写在最开始"
+url = "https://mp.weixin.qq.com/s/FHqwnm1TKU53hdZrhqhvww?token=1390087863&lang=zh_CN"
+
+[[banner_list]]
+img = "../../images/banner/son.jpeg"
+text = "2025年,我要做个自我介绍"
+url = "https://mp.weixin.qq.com/s/kV6ZsqOmzRaqw9tCNwH5hw?token=1390087863&lang=zh_CN"
+
+[[group_list]]
+group_name = "互联网技术"
+show = false
+
+[[group_list.items]]
+id = 1044
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1kHZz29JmJib9IgwNDuCdYibibedOX4G41BiaTFu36LmFkFfErCa8Ns2ibibDfJh2s4BmByJRLn92LibBLew/0?wx_fmt=jpeg"
+title = "GPT2模型的私有化部署方案"
+desc = "借助tritonserver完成gpt2模型的本地私有化部署"
+url = "https://mp.weixin.qq.com/s/zDLxOloY6srRWrm10Ez2TA"
+[[group_list.items]]
+id = 1043
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nz2KOTfbTqzkcqTOK8GV5kK3x5E1qe9NLiaSO4U7EJmXuLTmsZIJshlmtQBoW4HYPwhbAf0Y5QXng/0?wx_fmt=jpeg"
+title = "GRPC全攻略：从环境搭建到代码实现"
+desc = "同步模式中的四种使用方法介绍"
+url = "https://mp.weixin.qq.com/s/NrDPFRXpN84W_Cww1f4VyQ"
+[[group_list.items]]
+id = 1042
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1lbM6ibqibeEa3eIsbKfOsFP7ALribiaKhOicleibsiawhHUsBtBJlJQnxryqad8mZQssEfysE5T83btNtPg/0?wx_fmt=jpeg"
+title = "微信小程序文章列表页美化之捷径"
+desc = "借助大模型助力前端小白完成列表页开发"
+url = "https://mp.weixin.qq.com/s/YONKsB9xstFpEDSXQ3oEjQ"
+[[group_list.items]]
+id = 1000
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mibibcibuZCQ8Hhfkb8IUA9ZYtC5Vrpib16BzzbvpK9HIFLWXv977wtKv0b8zibnQhJAqmaHj4JZXorxA/0?wx_fmt=jpeg"
+title = "百度：文心大模型免费+开源"
+desc = "文心系列大模型4月1日免费，6月30日开源"
+url = "https://mp.weixin.qq.com/s/8kY2cuAiAXg0OkojfKUQlg?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1001
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1kLBPuuIVPE4uEFWEIveeouUCqgn4hSLqfhsQXgnhltCMeSlpUjQyThvqn1V4PKqTsnBEibLbPKryg/0?wx_fmt=jpeg"
+title = "搞定公众号关联小程序头部banner轮播"
+desc = "小趴菜搞出小程序banner，但却是一半成品"
+url = "https://mp.weixin.qq.com/s/Ai7Taf0nqx0-aw0ZWS_woA?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1002
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1m6iaZklradYPdovl2zmXMayic0qbka9Xyj370pibxlyJTLDq2cKrYlNtCicicGibfQQ42JMoHqvL8cSEuA/0?wx_fmt=jpeg"
+title = "文章列表跳转公众号详情页"
+desc = "小程序实现文章列表点击跳转公众号详情页"
+url = "https://mp.weixin.qq.com/s/rE4mYU3RXeiNuYdifLn1UQ?token=29720193&lang=zh_CN"
+
+[[group_list.items]]
+id = 1003
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nQtesytTaibjpDfTRBx45vQP2paIENxcUE3W0NcLKlPiamgzmmQ1ZENf5p1A7UibhKXmFYeLQdcRYibA/0?wx_fmt=jpeg"
+title = "公众号与小程序关联打通"
+desc = "公众号和自研小程序实现关联互通"
+url = "https://mp.weixin.qq.com/s/rE4mYU3RXeiNuYdifLn1UQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1004
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1kVOViaR5u8ajxcHtmDXdbD7v7ric7IAdTFDlgL7CCibCa9goN1sf51pvOKgyPJMibIuI0X0FgCJwzmIQ/0?wx_fmt=jpeg"
+title = "Elastic：search_after+pit vs scroll"
+desc = "elastic全量检索，我们该如何选择?"
+url = "https://mp.weixin.qq.com/s/Bv2zsU5L2ZP0yqMd0QiJ1g?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1006
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mArN773dht2icOvDO64lPyUU0e571ak6HjGlibmSDDpDC4C6xG6Uy4FSBZUW87SDTJDolx5aK20Pow/0?wx_fmt=jpeg"
+title = "tritonserver客户端开发指南"
+desc = "客户端访问clip-vit-large-patch14模型"
+url = "https://mp.weixin.qq.com/s/BbQzKqWK7qXCT0H5AUSdGw?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1007
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mArN773dht2icOvDO64lPyUU0e571ak6HjGlibmSDDpDC4C6xG6Uy4FSBZUW87SDTJDolx5aK20Pow/0?wx_fmt=jpeg"
+title = "tritonserver实现Clip-ViT模型工程化"
+desc = "轻松获取图片特征(by grpc or http)"
+url = "https://mp.weixin.qq.com/s/mSck8b1pzyRBHNl13U-xmw?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1008
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nwiatPgsCfMicQ51jg1x8kLicwgxblRicGkOiaVdlnfmxE2DTtStds7NHKuaxEvJTmMibwoedaibTG6WBzw/0?wx_fmt=jpeg"
+title = "详解elastic point in time"
+desc = "Elastic的pit(point in time)到底是个啥玩意？"
+url = "https://mp.weixin.qq.com/s/5MGmjazNQE9Gw1nVoRzALQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1009
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1kevZInAw9JOT8VokvQZ0v0JYULG3TsiavxsvujBsjh8PuS7XbyyLAspJwV3OruCCYUcTIskicw2uLA/0?wx_fmt=jpeg"
+title = "一文搭建AI时代图片搜索服务"
+desc = "Golang+Elastic实现图片搜索服务"
+url = "https://mp.weixin.qq.com/s/ISN-JT5ctlEEK2ZAqWGGzQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1010
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1lUDnaeKCksgJicOn0IAmeZXW4SficaicGxe9L3h9rYdoGx4150w8HnQA9LfxtEworcfx9qlEfGSqtFw/0?wx_fmt=jpeg"
+title = "Elastic向量检索数据集+768维向量获取"
+desc = "一天搞定向量检索所需数据集以及768维向量"
+url = "https://mp.weixin.qq.com/s/MiN26PpFITZdzQmQA_zvRQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1011
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mS8l55Gw4Lq4Ejbp33MweCezVfQ1fbVZCz9InXicnh98ytGPjRxVoC4TffydoYs7fdKX0veK0T8Mg/0?wx_fmt=jpeg"
+title = "Elastic滚动查询官方推荐方案"
+desc = "Elastic search_after检索实现(golang)"
+url = "https://mp.weixin.qq.com/s/x-mCisyI1qtNorKVGd1dEA?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1012
+img = "ttps://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1lb8gC5SAIOdDPhTv6Jlk4wjJuJuVWuPIvqFO3rYVh59rV0SVpHRxQdbmfic7RdibjRT2QiaiaADuseKQ/0?wx_fmt=jpeg"
+title = "Elastic滚动查询传统方案"
+desc = "Elastic scroll查询实现(golang)"
+url = "https://mp.weixin.qq.com/s/RmGA4SGRrLRFeMBop2b1ag?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1013
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mejTzxiaYkBmMeWIvw5ibR0Txm200lVeraiaEYoJ3M5r9QNobzSzHqCQNB3UJicqPpUiazGLic6SpsG1nA/0?wx_fmt=jpeg"
+title = "Elastic: from+size实现分页"
+desc = "golang实现elastic的分页查询"
+url = "https://mp.weixin.qq.com/s/n-_-7W34c60vBDj9bJUiRw"
+[[group_list.items]]
+id = 1014
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nZEADKqVxqgsIZyRD0HptNcQzp9F85ZMwRpsf1MDUtvhKPcZN3jAx13PSG60rgcEnbdM5Qz3StLQ/0?wx_fmt=jpeg"
+title = "Kibana for Mac: 极简安装教程"
+desc = "Step by step在mac完成kibana的安装"
+url = "https://mp.weixin.qq.com/s/Q_nFiTj1gGib6y8hbR91Iw"
+[[group_list.items]]
+id = 1015
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nxkT7nFBxch6ib1McBZUGd9ECFqw1N5DSFIssvXuVxibkODHt166moemPaYf0iayBrloj0jxnkDSEEQ/0?wx_fmt=jpeg"
+title = "Elastic for Mac: 极简安装教程"
+desc = "Step by step在mac完成Elastic的安装"
+url = "https://mp.weixin.qq.com/s/XN-XrRt5S_JD5KNLRQrXzg"
+[[group_list.items]]
+id = 1016
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1lCyiawPxCibxvrHibBS9gFbCZyA6rOibcWicJDLbhBE3OKFehJpk2icj9g7MOQmDDxODtWdkjPceFEMLNw/0?wx_fmt=jpeg"
+title = "protobuf c++开发快速上手指南"
+desc = "protobuf c++开发详细教程"
+url = "https://mp.weixin.qq.com/s/rCKXNFLgVqUp3VZwYqjFxA?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1017
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mCZt8M30D50Dkib4EZHsjDXMBVA6N19kiblOqKlDNtH7v9ucibKI3VMcB6MwFeoFp8Q2QhrM3XHE99Q/0?wx_fmt=jpeg"
+title = "RabbitMq内存打满问题分析"
+desc = "RabbitMq连接过多导致的内存打满"
+url = "https://mp.weixin.qq.com/s/0trfdwkHJBr9jD1uXGrHHw?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1018
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1kAu3jib7u3al2TVzzxH8QLBiaKygyoWw7kPsGLtv4WjqmA6Mj0LdkFY6JPW2SbMFlzz2CXTo1pfCZA/0?wx_fmt=jpeg"
+title = "RabbitMq死信队列使用"
+desc = "RabbitMQ-死信队列(golang)"
+url = "https://mp.weixin.qq.com/s/0-qtgdyA4KhKSCQazf6QFA?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1019
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1lubTibHok7SHib0wvHXRfJrIHOc9z8V7QVEeutuuxcYA21uXDdsw8PckHsvpgkJM4IX9tibopkIsugw/0?wx_fmt=jpeg"
+title = "Elastic向量检索技术方案"
+desc = "ElasticSearch向量检索技术方案详解与实现"
+url = "https://mp.weixin.qq.com/s/T1GlRajV62Wm8u4XOamfDA?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1020
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nvZQJ61GN3mHAAFAMLhJpGgIdTGBynFUbwqUbzN1DL4NpHHJPThORw6hGF1zgzS7FUfhnB8ibbC4g/0?wx_fmt=jpeg"
+title = "Elastic查询DSL自研构建包(golang)"
+desc = "Elastic DSL自研构建包实现原理"
+url = "https://mp.weixin.qq.com/s/ozMvIEFXqrJ_X0GCQ1ckXg?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1021
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nUWRRXfiap7Eic2FXQbrtEhHia103Fo1PbCtVMdB3GN9D0iaLtEicYmw78nnQGJSDnQxrpOt0b0jmNqdQ/0?wx_fmt=jpeg"
+title = "golang操作mysql之利器-gorm"
+desc = "gorm使用细节介绍"
+url = "https://mp.weixin.qq.com/s/R-ckzQEQFJ6E3h6Lo0cSfQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1022
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nooREPaqJ83hoOD83mel2aFTW6yxwqjDktzpZ0mw8sOSWDm8z5WOiaOrpSSicCHr04dXdjjBMQA5Pg/0?wx_fmt=jpeg"
+title = "Elastic golang包olivere使用方法"
+desc = "es增删改查以及批量操作方法"
+url = "https://mp.weixin.qq.com/s/ZbDZrEJhI8FLNVRPF0Rifg?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1023
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1lqRQiagO7e94gyS76dH2K2icN8qWHWsC73qicS8iaFRztgC38FpYoHdxlYNMjx8m1lbdtW2XnWTQCKFA/0?wx_fmt=jpeg"
+title = "golang线程池ants-实现架构"
+desc = "详解线程池ants技术实现方案"
+url = "https://mp.weixin.qq.com/s/8MW8YhyAodr2uCs7xXpIlQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1024
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mM2BtyMgicf6R9fZCQJN8qibGFnbuD13BZWjpvT3iapO26FzqY3c7fEq3ENMOzSZGFStOEs07wwzl4g/0?wx_fmt=jpeg"
+title = "RabbitMQ-topic exchange使用方法"
+desc = "详解rabbitmq exchang交换机使用方法"
+url = "https://mp.weixin.qq.com/s/T_LN-qIDfwqTqx-b1NXygQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1025
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1kfPpOQHkib9Jic2k8To0WiaAvs6zU9oZ6VDxwpicNdTLWoAX7ibliaALTic7wF7f4eicc6H8EkwNklkklnoQ/0?wx_fmt=jpeg"
+title = "RabbitMQ-topic direct使用方法"
+desc = "详解rabbitmq直连交换机使用方法"
+url = "https://mp.weixin.qq.com/s/-KiYRhQmUvZF_V1k582lJQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1026
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mYweiaeiaPTyXknjnJEeWdG9icGQVj9qPFNicq3hDCNNnMptygbzIzKojzTrl0LWnRvmtuTYhUEIx3Fw/0?wx_fmt=jpeg"
+title = "golang线程池ants-你会用了吗"
+desc = "线程池ants使用方法汇总"
+url = "https://mp.weixin.qq.com/s/OZq0CvrSRvo8ZI321t5hYg?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1027
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mYweiaeiaPTyXknjnJEeWdG9Gs7v1WJiaOMeIMAVbKYWy0nXyCAhicibp49g4VNElt2iao5LeXoynZpypg/0?wx_fmt=jpeg"
+title = "RabbitMQ-发布/订阅模式"
+desc = "rabbitmq扇形交换机使用方法"
+url = "https://mp.weixin.qq.com/s/5d1_F-a7qXa-bQ1i47unaA?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1028
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nVEGnc6mHulib43jhYvzxkGG0PW59IHBGaDBcWdPm4Uicad58EJ5UaCqgAnQAfwy7IjoCKDnnU1Cgw/0?wx_fmt=jpeg"
+title = "RabbitMQ消息中间件使用之-傻瓜模式"
+desc = "rabbitmq默认交换机使用方法"
+url = "https://mp.weixin.qq.com/s/G8LsOQsg15gh2g5tUd14BQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1029
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nQhSsAhgDfYHk2ucQ89PByp7kavrv1A2OSEoR1IbVib2Ehn9skRcOSJxBv1GyoJjeluvwrCwkSEvQ/0?wx_fmt=jpeg"
+title = "抖音视频批量下载工具"
+desc = "自研：一键实现抖音视频批量下载"
+url = "https://mp.weixin.qq.com/s/z8ahLAoXflZgcGHGJmDoiA?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1030
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1l2AoSdSyia8Cr8icib9N6zMaYFnh4sDjOgMzNFQibMkZd1a10NdVThWLlib7ibVT13reSGiaCJDNxQqXTTw/0?wx_fmt=jpeg"
+title = "golang的heap profile是抽风了吗"
+desc = "golang的heap profile使用方法"
+url = "https://mp.weixin.qq.com/s/GzW9YVpKukMNDYpxJpsHbg?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1031
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1l2AoSdSyia8Cr8icib9N6zMaYFnh4sDjOgMzNFQibMkZd1a10NdVThWLlib7ibVT13reSGiaCJDNxQqXTTw/0?wx_fmt=jpeg"
+title = "tfrecord文件操作技术方案(python)"
+desc = "tfrecord文件介绍、读取、写入介绍"
+url = "https://mp.weixin.qq.com/s/X3VPFxXYmwpS7K1jGF1m0A?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1032
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1n5iafMHicEV7CGDMe0IFkXY7ib5W9WYJIRqAUbtn9UOOjtEIavyf8vKiaSmSMI927LjTXsRZOfL0A56g/0?wx_fmt=jpeg"
+title = "条件变量的使用(golang)"
+desc = "golang条件变量介绍以及使用方案"
+url = "https://mp.weixin.qq.com/s/tDRz-GMB8qXNF20dROwIQQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1033
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mj079NyV0lVkn66g5XRDuGkTrnUvo77SGtzKsUNCqoEcuoaR6y6hZJHocQcaRXfgJR580Vl0a5mw/0?wx_fmt=jpeg"
+title = "tritonserver学习之九: grpc异步模式"
+desc = "tritonserver grpc异步模式技术方案"
+url = "https://mp.weixin.qq.com/s/uI4EWmqLJ_wqoq5jhpc0sw?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1034
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mj079NyV0lVkn66g5XRDuGkTrnUvo77SGtzKsUNCqoEcuoaR6y6hZJHocQcaRXfgJR580Vl0a5mw/0?wx_fmt=jpeg"
+title = "tritonserver学习之八: redis_caches"
+desc = "tritonserver redis缓存技术方案介绍"
+url = "https://mp.weixin.qq.com/s/0NRAr4xiimtV9hVZCgsdeg?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1035
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1n1dPmcWia98hM9TMbqvsKgglAc19y9ibQEQRxfup45PpgTDjUakiaX0AjC83y5icBXsX6ks9cGTYfCfA/0?wx_fmt=jpeg"
+title = "tritonserver学习之七: cache管理器"
+desc = "tritonserver缓存技术方案介绍"
+url = "https://mp.weixin.qq.com/s/7bcksGFKP7oexMGqkk4kWQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1036
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1n1dPmcWia98hM9TMbqvsKgglAc19y9ibQEQRxfup45PpgTDjUakiaX0AjC83y5icBXsX6ks9cGTYfCfA/0?wx_fmt=jpeg"
+title = "tritonserver学习之六: backend实践"
+desc = "c++、python custom backend实践"
+url = "https://mp.weixin.qq.com/s/vsgTC5EMvuVfgfRMX3DPxQ?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1037
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1n1dPmcWia98hM9TMbqvsKgglAc19y9ibQEQRxfup45PpgTDjUakiaX0AjC83y5icBXsX6ks9cGTYfCfA/0?wx_fmt=jpeg"
+title = "tritonserver学习之五: backend实现机制"
+desc = "tritonserver backend设计原理介绍"
+url = "https://mp.weixin.qq.com/s/9QWGhKgC77JvHZQ16K_l4Q?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1038
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1k3AHmHutrfnCVyusq6YXqMS8WJU7fYMl4wrCb5GEXClaEEF1dhIia4jiciabta9Mib0ZDh4yLP6BFhzQ/0?wx_fmt=jpeg"
+title = "tritonserver学习之四: 服务运行流程"
+desc = "详解tritonserver运行流程"
+url = "https://mp.weixin.qq.com/s/d1nGSHAD-Lin9_21z5sv0g?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1039
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1k3AHmHutrfnCVyusq6YXqMS8WJU7fYMl4wrCb5GEXClaEEF1dhIia4jiciabta9Mib0ZDh4yLP6BFhzQ/0?wx_fmt=jpeg"
+title = "tritonserver学习之三: 编译"
+desc = "搞定triton自定义编译问题"
+url = "https://mp.weixin.qq.com/s/B_4Lut6N_yUo7AraBhva3w?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1040
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1k3AHmHutrfnCVyusq6YXqMS8WJU7fYMl4wrCb5GEXClaEEF1dhIia4jiciabta9Mib0ZDh4yLP6BFhzQ/0?wx_fmt=jpeg"
+title = "tritonserver学习之二: 命令行解析"
+desc = "一文详解triton命令行解析方案"
+url = "https://mp.weixin.qq.com/s/V1lvMb3j4tWGCkU42d_A-Q?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 1041
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1lgcBpWt4MzfAjibe04ib78dlPAjAvQlSAGJrCVxphoUQDb43VxqDOaQIFWZN1L4sELN4VhQwO1iad0Q/0?wx_fmt=jpeg"
+title = "tritonserver学习之一：triton使用流程"
+desc = "低成本高效完成模型工程化"
+url = "https://mp.weixin.qq.com/s/WalCGxxiCcQ5DnMo6gUXhg?token=29720193&lang=zh_CN"
+
+
+[[group]]
+group_name = "读书点亮生活"
+show_all = false
+[[group_list.items]]
+id = 3003
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1neRIW8XHk1IsLrgiboujVnsfKmfT9JA7pmOygb7YsovvribG7col3gqIRPGW0dJNWJfPB8g4Xt2khQ/0?wx_fmt=jpeg"
+title = "跑步的第六年，才真正了解运动的意义"
+desc = "读《运动改造大脑》有感"
+url = "https://mp.weixin.qq.com/s/9k0Wj1l9RzOPjcMj0L7d8Q"
+[[group_list.items]]
+id = 3002
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mmjHQSVzoBtfa0s5n5eIoz45Yeib511j9sm6CNS6AHtIRoKRl3aRNNkPxUajiae1oX813lJxMdpZNQ/0?wx_fmt=jpeg"
+title = "抗疫英雄汪勇：平凡人的非凡之举"
+desc = "致敬所有在抗击新冠疫情中出生入死的英雄"
+url = "https://mp.weixin.qq.com/s/8jLMt0zZJimA8GrsCaw3Mg"
+[[group_list.items]]
+id = 3001
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1nJKkxTMEp85vs0iaC0VtYd5AhMmzsYRoIKOFK5ibPaDiaaoyicVV31uA1K4os0ns8wnVPicLc16QPSUbg/0?wx_fmt=jpeg"
+title = "李白：为何两次选择做了上门女婿？"
+desc = "揭示伟大诗人李白两次入赘的真实原因"
+url = "https://mp.weixin.qq.com/s/jXEUMBB-mz6cRpLVJqAuSw?token=29720193&lang=zh_CN"
+[[group_list.items]]
+id = 3000
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mO5Tic4jQsQBxSnYomfOW8G789ts7jgN77BXPr2ibQBrlRqlCqhQ2WweShpibW6nnSZZZZFO2HctXyA/0?wx_fmt=jpeg"
+title = "纳兰性德-我是人间惆怅客"
+desc = "大清第一词人，大清第一有情之人"
+url = "https://mp.weixin.qq.com/s/I6nyDzkv0ybd9jhhKggKIg?token=29720193&lang=zh_CN"
+[[group]]
+group_name = "生活日常"
+show_all = false
+
+[[group_list.items]]
+id = 12
+img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mNLOx5tOiaGv3AVq0lia9yl62xznkzhlzSGtwWm3We7MKJeUDTYxlJlyIuTrna8ZEzLx9gYzQvgeOQ/0?wx_fmt=jpeg"
+title = "最美中关村软件园"
+desc = "秋天的软件园，吸引着无数心怀梦想的人"
+url = "https://mp.weixin.qq.com/s/ZydxhEnkvDtZN7axkla0eA?token=29720193&lang=zh_CN"
