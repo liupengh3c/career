@@ -10,7 +10,7 @@ url = "https://mp.weixin.qq.com/s/kV6ZsqOmzRaqw9tCNwH5hw?token=1390087863&lang=z
 
 [[group_list]]
 group_name = "互联网技术"
-show = false
+show_all = false
 
 [[group_list.items]]
 id = 1044
@@ -279,7 +279,7 @@ desc = "低成本高效完成模型工程化"
 url = "https://mp.weixin.qq.com/s/WalCGxxiCcQ5DnMo6gUXhg?token=29720193&lang=zh_CN"
 
 
-[[group]]
+[[group_list]]
 group_name = "读书点亮生活"
 show_all = false
 [[group_list.items]]
@@ -306,7 +306,7 @@ img = "https://mmbiz.qpic.cn/sz_mmbiz_jpg/7rPlvA77q1mO5Tic4jQsQBxSnYomfOW8G789ts
 title = "纳兰性德-我是人间惆怅客"
 desc = "大清第一词人，大清第一有情之人"
 url = "https://mp.weixin.qq.com/s/I6nyDzkv0ybd9jhhKggKIg?token=29720193&lang=zh_CN"
-[[group]]
+[[group_list]]
 group_name = "生活日常"
 show_all = false
 

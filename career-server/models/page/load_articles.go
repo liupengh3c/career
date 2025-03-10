@@ -26,9 +26,9 @@ type Items struct {
 	URL   string `json:"url" toml:"url"`
 }
 type GroupList struct {
-	Name  string  `json:"name" toml:"name"`
-	Show  bool    `json:"show" toml:"show"`
-	Items []Items `json:"items" toml:"items"`
+	GroupName string  `json:"group_name" toml:"group_name"`
+	ShowAll   bool    `json:"show_all" toml:"show_all"`
+	Items     []Items `json:"items" toml:"items"`
 }
 
 func LoadArticles(ctx *gin.Context, response *result.JsonResponseInterface) {
