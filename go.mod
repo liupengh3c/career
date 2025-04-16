@@ -7,7 +7,6 @@ require (
 	github.com/elastic/go-elasticsearch/v8 v8.17.0
 	github.com/json-iterator/go v1.1.12
 	github.com/liupengh3c/esbuilder v0.0.0-20241227073137-4141681b4dfb
-	github.com/olivere/elastic/v7 v7.0.32
 	github.com/panjf2000/ants/v2 v2.9.1
 	golang.org/x/net v0.24.0
 	gorm.io/driver/mysql v1.5.7
@@ -15,7 +14,6 @@ require (
 )
 
 require (
-	github.com/BurntSushi/toml v1.4.0 // indirect
 	github.com/elastic/elastic-transport-go/v8 v8.6.0 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
@@ -30,9 +28,4 @@ require (
 	golang.org/x/text v0.14.0 // indirect
 )
 
-require (
-	github.com/josharian/intern v1.0.0 // indirect
-	github.com/mailru/easyjson v0.7.7 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
-	github.com/rabbitmq/amqp091-go v1.10.0
-)
+require github.com/rabbitmq/amqp091-go v1.10.0
