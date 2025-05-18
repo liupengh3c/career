@@ -21,14 +21,15 @@ class DwRabbitMQ:
                 url=self.url
             )
             self.channel = await self.connection.channel()
-
-            self.exchange = await self.channel.declare_exchange(name=self.exchange_name, type=self.exchange_type)
-            arguments = {
-                "x-dead-letter-exchange": 'dlk:' + self.exchange_name,
-                "x-dead-letter-routing-key": 'dlk:' + self.queue_name,
-            }
+            await self.channel.set_qos(prefetch_count=1000)
+            self.exchange = await self.channel.declare_exchange(name=self.exchange_name, type=self.exchange_type, durable=True)
+            # arguments = {
+            #     "x-dead-letter-exchange": 'dlk:' + self.exchange_name,
+            #     "x-dead-letter-routing-key": 'dlk:' + self.queue_name,
+            # }
             # 队列声明为永久队列，持久化
-            self.queue = await self.channel.declare_queue(name=self.queue_name, arguments=arguments, durable=True)
+            self.queue = await self.channel.declare_queue(name=self.queue_name, arguments=None, durable=True)
+            # await self.channel.set_qos(prefetch_count=1000)
         except Exception as e:
             print("occur exception:",e)
 
@@ -69,7 +70,8 @@ class DwRabbitMQ:
         """callback."""
         try:
             # print(f"Consumer 1 received: {message.body.decode()}")
-            self.async_queue.put_nowait((message, message.body.decode()))
+            await self.async_queue.put((message, message.body.decode()))
+            # self.async_queue.put_nowait((message, message.body.decode()))
         except Exception:
             print("callback error!")
 

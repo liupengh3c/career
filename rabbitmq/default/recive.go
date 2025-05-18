@@ -20,7 +20,11 @@ func main() {
 		return
 	}
 	defer ch.Close()
-
+	// ch.Qos(
+	// 	1,     // prefetch count
+	// 	0,     // prefetch size
+	// 	false, // global
+	// )
 	q, err := ch.QueueDeclare(
 		"lp_default", // name
 		true,         // durable
@@ -47,7 +51,11 @@ func main() {
 		fmt.Println("Consume error:", err)
 		return
 	}
-
+	// ch.Qos(
+	// 	1,     // prefetch count
+	// 	0,     // prefetch size
+	// 	false, // global
+	// )
 	var forever chan struct{}
 
 	go func() {

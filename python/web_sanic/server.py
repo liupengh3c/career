@@ -7,7 +7,7 @@ from views import bp_views
 
 app = Sanic("MySanicApp")
 register_tortoise(
-    app, db_url="mysql://sanic:sanic123@60.205.177.189:3306/career", modules={"models": ["models.user"]}, generate_schemas=True
+    app, db_url="mysql://sanic:sanic123@60.205.177.189:3306/career", modules={"models": ["models.user"]}, generate_schemas=False
 )
 # 注册蓝图
 app.blueprint(bp_views)

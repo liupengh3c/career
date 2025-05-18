@@ -8,7 +8,7 @@ async def main():
     batch_size = 60
     max_delay = 60
     lists = []
-    dw_rabbitmq = DwRabbitMQ("amqp://guest:guest@192.168.3.15:5672/addw", 'dw_jiesuan_queue', 'dw_jiesuan_exchange')
+    dw_rabbitmq = DwRabbitMQ("amqp://guest:guest@127.0.0.1:5672/", 'dw_queue', 'dw_exchange')
     await dw_rabbitmq.connect()
     await dw_rabbitmq.queue_bind_exchange()
     await dw_rabbitmq.set_callback(dw_rabbitmq.callback)
@@ -26,6 +26,7 @@ async def main():
         # 批量处理消息
         for i in range(len(lists)):
             print("[x] Received %r" % lists[i][1])
+            time.sleep(1)
             try:
                 await lists[i][0].ack()
             except Exception as e:
