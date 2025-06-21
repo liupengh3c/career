@@ -1,0 +1,7 @@
+2025-06-20 06:45:15 [INFO] [__main__]: 服务已启动
+2025-06-20 06:45:15 [DEBUG] [__main__]: 调试信息
+2025-06-20 06:45:15 [ERROR] [__main__]: 出现异常：
+Traceback (most recent call last):
+  File "/Users/liupeng/Documents/career/career/python/log_print/main.py", line 51, in <module>
+    x = 1 / 0
+ZeroDivisionError: division by zero
