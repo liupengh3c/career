@@ -85,6 +85,7 @@ func SearchFromSize() {
 		fmt.Println("search err:", err.Error())
 		return
 	}
+	resp.Body.Close()
 	err = json.NewDecoder(resp.Body).Decode(&docs)
 	if err != nil {
 		fmt.Println("decode err:", err.Error())
@@ -103,6 +104,7 @@ func SearchFromSize() {
 			fmt.Println("search err:", err.Error())
 			return
 		}
+		resp.Body.Close()
 		err = json.NewDecoder(resp.Body).Decode(&docs)
 		if err != nil {
 			fmt.Println("decode err:", err.Error())
