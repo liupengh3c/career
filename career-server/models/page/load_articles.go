@@ -41,6 +41,6 @@ func LoadArticles(ctx *gin.Context, response *result.JsonResponseInterface) {
 		fmt.Println("decode toml err:" + err.Error())
 		return
 	}
-	fmt.Println(articles)
+	// fmt.Println(articles)
 	response.Data = articles
 }

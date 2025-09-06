@@ -108,9 +108,9 @@ func NewEsClient() (*elasticsearch.Client, error) {
 		TLSHandshakeTimeout: 10 * time.Second,
 	}
 	client, err := elasticsearch.NewClient(elasticsearch.Config{
-		Addresses: []string{"http://10.21.238.15:8200"},
-		Username:  "superuser",
-		Password:  "ES_admin",
+		Addresses: []string{"http://xx.xx.xxx.xx:8200"},
+		Username:  "your_es_username",
+		Password:  "your_es_password",
 		Transport: transport,
 	})
 
