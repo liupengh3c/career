@@ -1,6 +1,7 @@
-package html
+package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"golang.org/x/net/html"
@@ -30,15 +31,19 @@ func DecodeHtml() {
 	var f func(*html.Node)
 	f = func(n *html.Node) {
 		if n.Type == html.ElementNode && n.Data == "script" {
-			// for _, a := range n.Attr {
-			// 	if a.Key == "id" && a.Val == "RENDER_DATA" {
-			// 		fmt.Println(n.FirstChild.Data) // 打印script标签的文本内容
-			// 	}
-			// }
+			for _, a := range n.Attr {
+				if a.Key == "id" && a.Val == "RENDER_DATA" {
+					fmt.Println(n.FirstChild.Data) // 打印script标签的文本内容
+				}
+			}
 		}
 		for c := n.FirstChild; c != nil; c = c.NextSibling {
 			f(c)
 		}
 	}
 	f(doc)
+}
+
+func main() {
+	DecodeHtml()
 }
