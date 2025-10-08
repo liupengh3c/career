@@ -8,17 +8,18 @@ import (
 )
 
 type Clip struct {
-	TaskId     string
-	CarId      string
-	StartTime  int64
-	EndTime    int64
-	DeleteTime int64 // 数据删除时间
-	Topics     string
+	// TaskId     string
+	CarId      string // 车辆ID
+	StartTime  int64  // 开始时间
+	EndTime    int64  // 结束时间
+	DeleteTime int64  // 数据删除时间
+	Topics     string // 要保留的topic
 }
 
-// mergeBaseWithClips 将一个基准时间片与 n 个无交集时间片 merge
+// mergeBaseWithClips 将一个基准时间片与 n 个交集时间片 merge
 func mergeBaseWithClips(base Clip, others []Clip) []Clip {
 	timePointsAll := []int64{base.StartTime, base.EndTime}
+	// 取各片的时间点，在时间轴上完成投影，得到时间点序列
 	for _, c := range others {
 		timePointsAll = append(timePointsAll, c.StartTime, c.EndTime)
 	}
@@ -32,6 +33,7 @@ func mergeBaseWithClips(base Clip, others []Clip) []Clip {
 		}
 	}
 
+	// 遍历时间点序列，有交集的进行合并
 	mergeDatas := []Clip{}
 	for i := 0; i < len(uniq)-1; i++ {
 		clip := Clip{}
@@ -43,15 +45,11 @@ func mergeBaseWithClips(base Clip, others []Clip) []Clip {
 		topics := ""
 		expire := base.DeleteTime
 
-		covered := false
 		// 判断 base 覆盖
 		if (base.StartTime <= s) && (base.EndTime >= e) {
 			topicSli := strings.Split(base.Topics, ",")
-			fmt.Println("topicSli:", topicSli)
 			slices.Sort(topicSli)
 			topics = strings.Join(topicSli, ",")
-			fmt.Println("topicSli sorted:", topics)
-			covered = true
 			clip = base
 			clip.StartTime = s
 			clip.EndTime = e
@@ -69,16 +67,11 @@ func mergeBaseWithClips(base Clip, others []Clip) []Clip {
 				if expire > c.DeleteTime {
 					clip.DeleteTime = expire
 				}
-				covered = true
 			}
 		}
-
-		if covered {
-			mergeDatas = append(mergeDatas, clip)
-		}
+		mergeDatas = append(mergeDatas, clip)
 	}
-	fmt.Println("segments:", mergeDatas)
-	return mergeAdjacent(mergeDatas)
+	return mergeDatas
 }
 
 func mergeTopics(t1, t2 string) string {
@@ -102,7 +95,7 @@ func mergeTopics(t1, t2 string) string {
 	return strings.Join(result, ",")
 }
 
-// mergeAdjacent 合并相邻且 label/expire 相同的 segment
+// mergeAdjacent 合并相邻且 topic+delete_time 相同的 segment
 func mergeAdjacent(segs []Clip) []Clip {
 	if len(segs) == 0 {
 		return segs
@@ -112,7 +105,7 @@ func mergeAdjacent(segs []Clip) []Clip {
 		last := &res[len(res)-1]
 		cur := segs[i]
 		if last.Topics == cur.Topics && last.DeleteTime == cur.DeleteTime {
-			// 合并：延长 last 的 End
+			// 合并：延长 last 的 end_time
 			last.EndTime = cur.EndTime
 		} else {
 			res = append(res, cur)
@@ -154,8 +147,10 @@ func main() {
 			Topics:     "B,C,D",
 		},
 	}
-
+	// 第一步的合并
 	segs := mergeBaseWithClips(base, others)
+	// 第二步的合并
+	segs = mergeAdjacent(segs)
 	for i, seg := range segs {
 		fmt.Printf("[%d] %s -> %s | Label=%s | Expire=%s\n",
 			i+1,
