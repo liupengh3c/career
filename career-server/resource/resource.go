@@ -4,6 +4,7 @@ import (
 	"sync"
 
 	"github.com/elastic/go-elasticsearch/v8"
+	"github.com/go-redis/redis/v8"
 	"golang.org/x/time/rate"
 )
 
@@ -18,4 +19,5 @@ var (
 	GlobalLimiter    *rate.Limiter
 	GlobalLimiterCnt = 10
 	GlobalLimiterMax = 20
+	RedisClient      *redis.Client
 )

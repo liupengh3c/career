@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/elastic/go-elasticsearch/v8"
+	"github.com/go-redis/redis/v8"
 	"golang.org/x/time/rate"
 )
 
@@ -34,4 +35,12 @@ func LimitInit() {
 	// 这里可以初始化一些全局变量或者执行一些初始化的操作
 	resource.IpLimiter = make(map[string]*rate.Limiter)
 	resource.GlobalLimiter = rate.NewLimiter(rate.Limit(resource.GlobalLimiterCnt), resource.GlobalLimiterMax)
+}
+
+func RedisInit() {
+	resource.RedisClient = redis.NewClient(&redis.Options{
+		Addr:     "localhost:6379",
+		Password: "",
+		DB:       0,
+	})
 }
