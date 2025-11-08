@@ -5,6 +5,7 @@ import (
 
 	"github.com/elastic/go-elasticsearch/v8"
 	"github.com/go-redis/redis/v8"
+	amqp "github.com/rabbitmq/amqp091-go"
 	"golang.org/x/time/rate"
 )
 
@@ -20,4 +21,5 @@ var (
 	GlobalLimiterCnt = 10
 	GlobalLimiterMax = 20
 	RedisClient      *redis.Client
+	RabbitMQChannel  *amqp.Channel
 )

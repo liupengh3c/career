@@ -21,7 +21,7 @@ type TestConfig struct {
 	Concurrency  int
 }
 
-func runTest(cfg TestConfig) {
+func runTest(cfg TestConfig) (float64, float64) {
 	fmt.Printf("\n===== Running test: %s =====\n", cfg.Mode)
 	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
 	if err != nil {
@@ -119,22 +119,11 @@ func runTest(cfg TestConfig) {
 				cnt := 0
 				go func() {
 					defer wg1.Done()
-					// for {
-					// 	if len(confirms) < msgPerGoroutine {
-					// 		time.Sleep(1 * time.Second)
-					// 		fmt.Println("len", len(confirms))
-					// 		continue
-					// 	}
-					// 	break
-					// }
 					for cnt < msgPerGoroutine {
 						for confirm := range confirms {
 							cnt = int(confirm.DeliveryTag)
 							if !confirm.Ack {
 								log.Printf("message not confirmed")
-							} else {
-								// log.Printf("message confirmed")
-								// fmt.Println("confirm.DeliveryTag", confirm.DeliveryTag)
 							}
 							if len(confirms) == 0 {
 								break
@@ -162,14 +151,15 @@ func runTest(cfg TestConfig) {
 	fmt.Printf("Total time: %.5fs\n", elapsed.Seconds())
 	fmt.Printf("Throughput: %.2f msg/s\n", rate)
 	// fmt.Printf("Avg Latency: %.2f ms/msg\n", avgLatency)
+	return elapsed.Seconds(), rate
 }
 
 func main() {
 	tests := []TestConfig{
 		// {
 		// 	Mode:         "NonDurable_NoConfirm",
-		// 	EngineName:   "tag_engine_1",
-		// 	QueueName:    "tag_insert_1",
+		// 	EngineName:   "test_engine_1",
+		// 	QueueName:    "test_queue_1",
 		// 	QueueDurable: false,
 		// 	DeliveryMode: 1,
 		// 	UseConfirm:   false,
@@ -179,8 +169,8 @@ func main() {
 		// },
 		// {
 		// 	Mode:         "Durable_NoConfirm",
-		// 	EngineName:   "tag_engine_2",
-		// 	QueueName:    "tag_insert_2",
+		// 	EngineName:   "test_engine_2",
+		// 	QueueName:    "test_queue_2",
 		// 	QueueDurable: true,
 		// 	DeliveryMode: 2,
 		// 	UseConfirm:   false,
@@ -190,8 +180,8 @@ func main() {
 		// },
 		{
 			Mode:         "Durable_WithConfirm",
-			EngineName:   "tag_engine_3",
-			QueueName:    "tag_insert_3",
+			EngineName:   "test_engine_3",
+			QueueName:    "test_queue_3",
 			QueueDurable: true,
 			DeliveryMode: 2,
 			UseConfirm:   true,
@@ -200,9 +190,16 @@ func main() {
 			Concurrency:  20,
 		},
 	}
-	for i := 0; i < 20; i++ {
+	loop := 20
+	sum := 0.0
+	rate := 0.0
+	for i := 0; i < loop; i++ {
 		for _, cfg := range tests {
-			runTest(cfg)
+			s, r := runTest(cfg)
+			sum += s
+			rate += r
 		}
 	}
+	fmt.Println("sum", sum/float64(loop))
+	fmt.Println("rate", rate/float64(loop))
 }

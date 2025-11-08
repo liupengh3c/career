@@ -2,16 +2,16 @@
     <outputs formatid="common">
         <console/>
         <filter levels="error">
-            <rollingfile type="date" filename="../log/career-server.log.wf" datepattern="2006010215" fullname="true" maxrolls="7" />
+            <rollingfile type="date" filename="./log/career-server.log.wf" datepattern="2006010215" fullname="true" maxrolls="7" />
             <!-- <smtp senderaddress="liupeng17@baidu.com" sendername="刘朋" hostname="mail2-in.baidu.com" hostport="25" username="liupeng17" password="123" subject="dreamgo模块报警">
                 <recipient address="liupeng17@baidu.com"/>
             </smtp> -->
         </filter>
         <filter levels="trace">
-            <rollingfile type="date" filename="../log/career-server.log" datepattern="2006010215" fullname="true" maxrolls="7" />
+            <rollingfile type="date" filename="./log/career-server.log" datepattern="2006010215" fullname="true" maxrolls="7" />
         </filter>
         <filter levels="debug">
-            <rollingfile type="date" filename="../log/career-server.log.debug" datepattern="2006010215" fullname="true" maxrolls="7" />
+            <rollingfile type="date" filename="./log/career-server.log.debug" datepattern="2006010215" fullname="true" maxrolls="7" />
         </filter>
     </outputs>
     <formats>

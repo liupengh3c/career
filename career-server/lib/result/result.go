@@ -161,3 +161,11 @@ func (r *JSONResponse) JsonpResponse(callback string) map[string]interface{} {
 	}
 	return m
 }
+
+type EchartsResponse struct {
+	FilePath string `json:"file_path"`
+}
+
+func (response *EchartsResponse) EchoResult(ctx *gin.Context) {
+	ctx.HTML(http.StatusOK, response.FilePath, nil)
+}
