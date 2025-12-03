@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	_ "net/http/pprof"
 	"runtime"
 	"time"
@@ -25,8 +26,7 @@ func printMemInfo() {
 	}
 }
 func main() {
-	a := map[string]int32{}
-	a["a"] = 1
-	a["b"] = 2
-	fmt.Println(a)
+	for i := 0; i < 100; i++ {
+		fmt.Println(rand.Intn(100))
+	}
 }

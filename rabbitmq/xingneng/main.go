@@ -148,7 +148,7 @@ func runTest(cfg TestConfig) (float64, float64) {
 
 	fmt.Printf("Test: %s\n", cfg.Mode)
 	fmt.Printf("Messages: %d, Concurrency: %d\n", cfg.MessageCount, cfg.Concurrency)
-	fmt.Printf("Total time: %.5fs\n", elapsed.Seconds())
+	fmt.Printf("Total time: %.5f s\n", elapsed.Seconds())
 	fmt.Printf("Throughput: %.2f msg/s\n", rate)
 	// fmt.Printf("Avg Latency: %.2f ms/msg\n", avgLatency)
 	return elapsed.Seconds(), rate
@@ -167,30 +167,30 @@ func main() {
 		// 	MessageCount: 200000,
 		// 	Concurrency:  20,
 		// },
+		{
+			Mode:         "Durable_NoConfirm",
+			EngineName:   "test_engine_2",
+			QueueName:    "test_queue_2",
+			QueueDurable: true,
+			DeliveryMode: 2,
+			UseConfirm:   false,
+			MessageSize:  1024 * 1024 * 10,
+			MessageCount: 500,
+			Concurrency:  20,
+		},
 		// {
-		// 	Mode:         "Durable_NoConfirm",
-		// 	EngineName:   "test_engine_2",
-		// 	QueueName:    "test_queue_2",
+		// 	Mode:         "Durable_WithConfirm",
+		// 	EngineName:   "test_engine_3",
+		// 	QueueName:    "test_queue_3",
 		// 	QueueDurable: true,
 		// 	DeliveryMode: 2,
-		// 	UseConfirm:   false,
+		// 	UseConfirm:   true,
 		// 	MessageSize:  1024,
 		// 	MessageCount: 200000,
 		// 	Concurrency:  20,
 		// },
-		{
-			Mode:         "Durable_WithConfirm",
-			EngineName:   "test_engine_3",
-			QueueName:    "test_queue_3",
-			QueueDurable: true,
-			DeliveryMode: 2,
-			UseConfirm:   true,
-			MessageSize:  1024,
-			MessageCount: 200000,
-			Concurrency:  20,
-		},
 	}
-	loop := 20
+	loop := 3
 	sum := 0.0
 	rate := 0.0
 	for i := 0; i < loop; i++ {
@@ -200,6 +200,6 @@ func main() {
 			rate += r
 		}
 	}
-	fmt.Println("sum", sum/float64(loop))
-	fmt.Println("rate", rate/float64(loop))
+	fmt.Println("平均耗时", sum/float64(loop))
+	fmt.Println("写入速率", rate/float64(loop))
 }

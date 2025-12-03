@@ -15,7 +15,7 @@ func Init() {
 	// 这里可以初始化一些全局变量或者执行一些初始化的操作
 	// ElasticInit()
 	LimitInit()
-	RabbitMQInit()
+	// RabbitMQInit()
 }
 func ElasticInit() {
 	cert, _ := os.ReadFile("/Users/liupeng/Documents/study/elasticsearch-8.17.0/config/certs/http_ca.crt")

@@ -12,6 +12,6 @@ func Register(engine *gin.Engine) {
 	engine.POST("mianhuatang/image_search", controllers.ImageSearch)
 	engine.POST("mianhuatang/load/articles", controllers.LoadArticles)
 	engine.POST("mianhuatang/clip/search", controllers.ClipSearch)
-	engine.GET("mianhuatang/echarts/bar", controllers.CreateEchartsBar)
+	engine.GET("mianhuatang/echarts/bar", controllers.CreateEcharts)
 	engine.POST("mianhuatang/rabbitmq/publish", controllers.RabbitMQPublish)
 }
