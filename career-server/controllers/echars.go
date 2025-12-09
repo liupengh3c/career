@@ -14,3 +14,8 @@ func CreateEchartsLines(ctx *gin.Context) {
 	// ctx.File(f.Name())
 	line.Render(ctx.Writer)
 }
+
+func CreateEchartsLinesFromFit(ctx *gin.Context) {
+	line := page.CreateLines(ctx)
+	line.Render(ctx.Writer)
+}

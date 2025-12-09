@@ -18,6 +18,7 @@ type App struct {
 
 // 入口函数，所有http 请求全部请求到这里，之后根据路由进行分发
 func main() {
+	gin.ForceConsoleColor()
 	bootstrap.Init()
 	engine := gin.Default()
 	config := new(App)
