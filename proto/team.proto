@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package Team;
+option go_package = "./team;team";
+
+enum Gender {
+    MALE = 0;
+    FEMALE = 1;
+    OTHER = 2;
+  }
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+  Gender gender = 4;
+  repeated string phone_numbers = 5;
+  // map<string, int32> attributes = 6;
+}
+message Team {
+    message Position {
+        string k_num = 1;
+        int32 floor_num = 2;
+    }
+    string name = 1;
+    int32 count = 2;
+    repeated Person members = 3;
+    Position position = 4;
+}
+
